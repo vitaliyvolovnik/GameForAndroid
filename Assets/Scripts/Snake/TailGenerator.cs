@@ -6,13 +6,13 @@ using System.Collections.Generic;
 public class TailGenerator : MonoBehaviour
 {
     [SerializeField] private Segment _segmentTamplate;
-    [SerializeField] private int _tailSize;
+    
 
-    public List<Segment> Generate()
+    public List<Segment> Generate(int count)
     {
         var tail = new List<Segment>();
 
-        for(int i = 0;i< _tailSize; i++)
+        for(int i = 0;i< count; i++)
         {
             tail.Add(Instantiate(_segmentTamplate,transform));
         }
