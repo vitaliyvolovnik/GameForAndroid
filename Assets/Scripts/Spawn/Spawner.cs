@@ -58,6 +58,7 @@ public class Spawner : MonoBehaviour
             MoveSpawner(1);
 
             GenerateRandomLine(_blockSpawnPoints, _blockTemplate.gameObject,_blockSpawnChance);
+            
         }
         MoveSpawner(_distanceBetweenRandomLine);
         GenerateElement(transform.position, _FinishTemplate.gameObject);
