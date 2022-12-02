@@ -8,6 +8,7 @@ public class SnakeHead : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
 
     public event UnityAction BlockCollided;
+    public event UnityAction Finish;
     public event UnityAction<int> PickUpBonus;
 
     private void Start()
@@ -33,6 +34,10 @@ public class SnakeHead : MonoBehaviour
         if(collision.gameObject.TryGetComponent(out Bonus bonus))
         {
             PickUpBonus?.Invoke(bonus.PickUp());
+        }
+        if (collision.gameObject.TryGetComponent(out Finish finish))
+        {
+            Finish?.Invoke();
         }
     }
 }

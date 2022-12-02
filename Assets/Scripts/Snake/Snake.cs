@@ -16,6 +16,7 @@ public class Snake : MonoBehaviour
     private List<Segment> _tail;
 
     public event UnityAction<int> SizeUpdate;
+    public event UnityAction GameOver;
 
     void Start()
     {
@@ -64,6 +65,8 @@ public class Snake : MonoBehaviour
         _tail.Remove(deletedSegment);
         Destroy(deletedSegment.gameObject);
         SizeUpdate?.Invoke(_tail.Count);
+        if (_tail.Count == 0)
+            GameOver?.Invoke();
     }
 
     private void OnPickUpBonus(int bonusVakue)

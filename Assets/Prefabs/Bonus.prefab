@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bonusSizeRange: {x: 1, y: 10}
-  _view: {fileID: 0}
+  _view: {fileID: 7134713255357254759}
 --- !u!58 &8017398679096181462
 CircleCollider2D:
   m_ObjectHideFlags: 0
